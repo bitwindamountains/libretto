@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+body {
+    font-family: 'Segoe UI', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #23272f;
+    color: #e0e3e8;
+}
+nav {
+    background: #23272f;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+nav a {
+    margin-right: 20px;
+    color: #7ab7ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+nav a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.card {
+    background: #2d323c;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+h1, h2, h3 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+ul {
+    padding-left: 20px;
+}
+.muted {
+    color: #8a8fa3;
+    font-style: italic;
+}
+.card-link {
+    display: inline-block;
+    padding: 6px 18px;
+    background: #23272f;
+    color: #7ab7ff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+.card-link:hover {
+    background: #7ab7ff;
+    color: #23272f;
+}
