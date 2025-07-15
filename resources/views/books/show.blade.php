@@ -20,6 +20,27 @@
 @empty
     <p class="text-muted">No reviews yet.</p>
 @endforelse
+
+{{-- Add Review Form --}}
+<div class="card mt-4">
+    <div class="card-body">
+        <h4 class="mb-3">Add a Review</h4>
+        <form action="{{ route('reviews.store') }}" method="POST">
+            @csrf
+            <input type="hidden" name="book_id" value="{{ $book->id }}">
+            <div class="mb-3">
+                <label for="rating" class="form-label">Rating</label>
+                <input type="number" name="rating" id="rating" class="form-control" min="1" max="5" required>
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Content</label>
+                <textarea name="content" id="content" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success"><i class="bi bi-plus-circle"></i> Add Review</button>
+        </form>
+    </div>
+</div>
+
 <div class="mt-4 d-flex gap-2">
     <a href="{{ route('books.index') }}" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back</a>
     <a href="{{ route('books.edit', $book->id) }}" class="btn btn-primary"><i class="bi bi-pencil"></i> Edit</a>
