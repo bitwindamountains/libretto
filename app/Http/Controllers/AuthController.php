@@ -22,11 +22,10 @@ class AuthController extends Controller
         if ($isExpired || !$existingToken) {
             $user->tokens()->delete();
             $token = $user->createToken('libretto-token')->plainTextToken;
+            return response()->json(['token' => $token]);
         } else {
-            $token = $existingToken->plainTextToken;
+            return response()->json(['message' => 'Token already created. Please use the existing token or logout to get a new one.'], 200);
         }
-
-        return response()->json(['token' => $token]);
     }
     public function logout(Request $request)
 {
